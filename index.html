@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+
+<!-- FORMULÁRIO DO RECIBO -->
+<div class="form">
+
+    <header>
+        <h1>Auto Escola Salmos</h1>
+        <h2>Centro de Formação de Condutores</h2>
+        <p>CNPJ 05.649.549/0002-58</p>
+    </header>
+
+    <div class="dados">
+        <fieldset>
+            <legend>Emissão de Recibo de Pagamento</legend>
+
+            <div class="input-wrapper">
+                <label for="name">Recebi do(a) Sr(a):</label>
+                <input type="text" id="name" />
+            </div>
+
+            <div class="input-wrapper">
+                <label for="renach">Renach:</label>
+                <input type="number" id="renach" />
+            </div>
+            
+            <div class="input-wrapper">
+                <label for="cpf">CPF:</label>
+                <input type="number" id="cpf" />
+            </div>
+           
+            <div class="input-wrapper">
+                <label for="payment">A importância de R$</label>
+                <input type="number" id="payment" />
+            </div>
+
+            <div class="input-wrapper">
+                <label for="pay">Referente ao pagamento de:</label>
+                <input type="text" id="pay" />
+            </div>
+
+            <div class="input-wrapper">
+                <label for="note">Observações:</label>
+                <textarea id="note"></textarea>
+            </div>
+
+            <div class="formOfPlayment">
+                <p>Forma de Pagamento:</p>
+                <label for="aVista"><input type="radio" name="formPlay" id="aVista" value="aVista" />À vista</label>
+                <label for="carne"><input type="radio" name="formPlay" id="carne" value="carne" />Carnê</label>
+                <label for="hiper_card"><input type="radio" name="formPlay" id="hiper" value="hiper" /><img src="img/icon-hipercard.svg" alt="hiper-card"></label>
+                <label for="visa_card"><input type="radio" name="formPlay" id="visa" value="visa" /><img src="img/icon-visa.svg" alt="hiper-card"></label>
+                <label for="master_card"><input type="radio" name="formPlay" id="master" value="master" /><img src="img/icon-marter.svg" alt="master-card"></label>          
+            </div>
+
+
+        </fieldset>
+    </div>
+    
+    <footer>
+        <button class="button" onclick="gerarRecibo()">Gerar Recibo</button>
+    </footer>
+
+</div>
+
+
+    <!-- PÁGINA DO RECIBO PARA IMPRESSÃO -->
+    <div class="print">
+
+        <div class="recibo">
+
+            <header>
+                <div class="logo">
+                    <img src="img/logo_autoescola.png" alt="Logo Auto Escola Salmos">
+                </div>
+                <div>
+                    <h1>Auto Escola Salmos</h1>
+                    <h3>Centro de Formação de Condutores</h3>
+                    <p>CNPJ 05.649.549/0002-58</p>
+                </div>
+            </header>
+
+                
+
+                <div class="numberDate">
+                    <h2>Recibo de Pagamento</h2>
+
+                    <div>
+                        <p>Número do Recibo: <span id="number_recibo"></span></p>
+                        <p>Data: <span id="recibo_data"></span></p>
+                    </div>
+                </div>
+        
+                <div class="info">
+                    <p>Recebi do(a) Sr(a): <span id="recibo_name"></span></p>
+                    <p>a importância de R$ <span id="recibo_payment"></span></p>
+                    <p>Renach <span id="recibo_renach"></span></p>
+                    <p>CPF: <span id="recibo_cpf"></span></p>
+                    <p>Referente ao pagamento de:<span id="recibo_pay"></span></p>
+                    <p>Forma de Pagamento:</p>
+
+                    <!-- <label for="aVista"><input type="radio" name="formPlay" id="recibo_aVista" value="aVista" />À vista</label>
+                    <label for="carne"><input type="radio" name="formPlay" id="recibo_carne" value="carne" />Carnê</label>
+                    <label for="hiper_card"><input type="radio" name="formPlay" id="recibo_hiper" value="hiper" /><img src="img/icon-hipercard.svg" alt="hiper-card"></label>
+                    <label for="visa_card"><input type="radio" name="formPlay" id="recibo_visa" value="visa" /><img src="img/icon-visa.svg" alt="hiper-card"></label>
+                    <label for="master_card"><input type="radio" name="formPlay" id="recibo_master" value="master" /><img src="img/icon-marter.svg" alt="master-card"></label>   -->
+                <!-- <p class="valide">Valide seu recibo neste link: testeseurecibo.com.br</p> -->
+            </div>
+
+           <div class="address">
+            <p>Matriz: Av. Afrânio Peixoto, nº 36, 1º andar - Periperi  | Tel.: 71 3521-0583 / 3521-3347</p>
+            <p>Filial: Travessa Frederico Costa, nº 10 - Periperi | Tel.: 71 3217-6404 / 3217-2877</p>
+           </div>     
+
+        </div>
+
+    </div>
+
+
+
+<!-- SCRIPT -->
+<script src="script.js"></script>    
+</body>
+</html>
